@@ -1,7 +1,29 @@
 package kz.sabyrzhan.kotlinbasics
 
 fun main() {
-    println(add(1, 2))
+    nullableDemo()
+}
+
+fun nullableDemo() {
+    var name: String = "Name"
+    var nullableName: String? = "Nullablename"
+
+
+    var len = name.length
+    var nullableLen = nullableName?.length
+
+    println("Len: $len, Nullablelen: ${nullableLen?.toShort()}")
+
+    nullableName?.let {
+        println("Safe nullable name=$it and length is ${it.length}")
+    }
+
+    // Elvis operatpr
+    var notNullValue = nullableName ?: "Guest"
+    println("Not nullable one: $notNullValue and its len ${notNullValue.length}")
+
+    var anotherNullVar: String? = null
+    println("This is not null assertion operator ${anotherNullVar!!.length}")
 }
 
 fun add(a: Int, b: Int): Int {
