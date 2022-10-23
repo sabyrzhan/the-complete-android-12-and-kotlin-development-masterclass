@@ -1,4 +1,4 @@
-package kz.sabyrzhan.kotlinbasics
+package kz.sabyrzhan.kotlinbasics.classes
 
 fun main(args: Array<String>) {
     val person = Person("Name", "Surname")
